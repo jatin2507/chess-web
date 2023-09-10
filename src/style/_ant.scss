@@ -1,0 +1,29 @@
+
+// Ant Design
+
+.container {
+  display: flex;
+  flex-wrap: wrap; 
+  .section {
+    flex: 1;  
+  }
+
+  // Media Query for responsiveness
+  @media (max-width: 768px) {
+    .section {
+      flex: 100%;
+    }
+  }
+  @media (max-width: 480px) {
+    .section {
+      flex: 100%;
+    }
+  }
+}
+
+
+@media (max-width: 520px) {
+  .ant-pro-page-container-children-container {
+    padding-inline: 0px!important; 
+}
+}

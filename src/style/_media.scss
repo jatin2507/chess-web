@@ -1,0 +1,40 @@
+@media screen and (max-width: 1023px) {
+    .login-box {
+      flex-direction: column;
+      box-shadow: none;
+    }
+    .illustration-wrapper {
+    width: 40vmax;
+    height: auto
+    }
+    #login-form {
+      max-width: 100%;
+    }
+    .illustration-wrapper-register {
+      height: 0px;
+      width: 0px;
+    }
+  }
+  
+
+@media (max-width: 480px) {
+    .chessboard {
+        position: absolute;
+        width: 95vmin;
+        height: 95vmin;
+      } 
+  }
+
+@media  (max-width:420px){
+    .login-box {
+        flex-direction: column;
+        box-shadow: none;
+      }
+      .illustration-wrapper {
+      max-width: 90%;
+      height: auto
+      }
+      #login-form {
+        max-width: 100%;
+      }
+}

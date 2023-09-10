@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import './style';
+import Loader from './Components/Loader';
 import reportWebVitals from './reportWebVitals';
-
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import reducer from './reducer';
+const App = React.lazy(() => import('./App'));
 const root = ReactDOM.createRoot(document.getElementById('root'));
+let store = configureStore({ reducer });
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+	<Suspense fallback={<Loader />}>
+		<Provider store={store}>
+			<App />
+		</Provider>
+	</Suspense>,
 );
 
 // If you want to start measuring performance in your app, pass a function

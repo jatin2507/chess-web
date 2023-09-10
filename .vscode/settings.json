@@ -1,0 +1,14 @@
+{
+    "prettier.htmlWhitespaceSensitivity": "strict",
+    "prettier.jsxSingleQuote": true,
+    "prettier.insertPragma": true,
+    "prettier.proseWrap": "always",
+    "prettier.quoteProps": "consistent",
+    "prettier.requireConfig": true,
+    "prettier.requirePragma": true,
+    "prettier.resolveGlobalModules": true,
+    "prettier.singleAttributePerLine": false,
+    "prettier.singleQuote": true,
+    "prettier.useTabs": true,
+    "prettier.vueIndentScriptAndStyle": true
+}

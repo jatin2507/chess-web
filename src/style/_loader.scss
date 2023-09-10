@@ -1,0 +1,28 @@
+  $body-bg-color: #eee;
+.loader {
+  background-color: $body-bg-color;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Horizontal center */
+  align-items: center; /* Vertical center */
+  min-height: 100vh;
+}
+
+.svgForLoader {
+  height: 60%;
+  width: 60%;
+  animation: textAnimate 5s infinite alternate;
+
+  @keyframes textAnimate {
+    0% {
+      stroke-dasharray: 0 50%;
+      stroke-dashoffset: 20%;
+      // fill: $body-bg-color;
+    }
+    100% {
+      stroke-dasharray: 50% 0;
+      stroke-dashoffset: -20%;
+      // fill: $body-bg-color;
+    }
+  }
+}

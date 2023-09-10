@@ -1,0 +1,88 @@
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: calc(100vh - 110px);
+    // background: #364d79;
+    overflow: hidden;
+  }
+  
+  .ant-carousel .slick-slide h3 {
+    color: black;
+  }
+
+
+  .three-button{
+    position: relative;
+    text-align: end;
+    
+    .button-hover-test{
+      appearance: none;
+      min-width: 130px;
+      background-color: #FFFFFF;
+      border-width: 0;
+      box-sizing: border-box;
+      color: #000000;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Clarkson, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0;
+      margin: 0;
+      opacity: 1;
+      outline: 0;
+      padding: 1em 2em;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      text-rendering: geometricprecision;
+      text-transform: uppercase;
+      transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1), background-color 100ms cubic-bezier(.694, 0, 0.335, 1), color 100ms cubic-bezier(.694, 0, 0.335, 1);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      vertical-align: baseline;
+      white-space: nowrap;
+    
+      &:before {
+        animation: opacityFallbackOut .5s step-end forwards;
+        backface-visibility: hidden;
+        background-color: #EBEBEB;
+        clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: translateZ(0);
+        transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+        width: 100%;
+      }
+    
+      &:hover:before {
+        animation: opacityFallbackIn 0s step-start forwards;
+        clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+      }
+    
+      &:after {
+        background-color: #FFFFFF;
+      }
+    
+      span {
+        z-index: 1;
+        position: relative;
+      }
+    }
+    .selected{
+      color: rgba(121, 80, 149, 1)
+    }
+    @media screen and (max-width: 520px) {
+      text-align: center;
+    }
+  }
+
+
+
+
+
+
+
