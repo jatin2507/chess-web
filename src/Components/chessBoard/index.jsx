@@ -16,7 +16,7 @@ export default function ChessBoard() {
         return squares;
     };
     return (
-        <div className="container">
+        <div className="container grid-item" >
             <div className="chessboard">
                 {renderChessboard()}
             </div>

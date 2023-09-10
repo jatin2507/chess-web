@@ -3,24 +3,26 @@ import { socket } from "../utils/socket";
 let initialValues = {
     userInfo: { isLoading: true },
     token: '',
-    waiting: { isWaiting: false },
-    fail: { error: false, msg: '' }
+    fail: { error: false, msg: '' },
+    popup: { show: false, title: '', content: '', type: '', route: '' },
+    match: { isWaiting: true }
 }
-let userToken = localStorage.getItem('token')
 let reducer = (state = initialValues, action) => {
+    let userToken = localStorage.getItem('token')
     let event = action.type.split('@')[0]
-    console.log('Event is comming',action)
     switch (event) {
-        case 'auth:guest':
+        case 'src:popup':
+            return { ...state, popup: action.payload };
+        case 'auth:token':
             return { ...state, token: action.payload.token };
-        case 'auth:userInfo':
-            return { ...state, userInfo: JSON.parse(JSON.stringify(action.payload)) };
-        case 'playes:waiting':
-            return { ...state, waiting: action.payload };
-        case 'playes:fail':
-            return { ...state, fail: action.payload }
+        case 'info:userInfo':
+            return { ...state, userInfo: action.payload };
+        case 'match:found':
+            return { ...state, match: action.payload }
+        case 'fail':
+            return { ...state, fail: { ...action.payload } }
         case 'req':
-            socket.emit('Request', { event: action.type.split('@')[1], payload: { ...action.payload, token: userToken } })
+            socket.emit('Request', { event: action.type.split('@')[1], payload: { token: userToken, ...action.payload } })
             return state
         default:
             return state

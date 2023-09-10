@@ -5,13 +5,14 @@ import Auth from '../pages/Auth';
 import Playes from '../pages/Plays/playes';
 import Matching from '../Components/Matching';
 import MulitPlayes from '../pages/Plays/MulitPlays/MulitPlayes';
+import Static from '../Components/Satics';
 const SinglePlays = lazy(async () => import('../pages/Plays/SinglePlays'));
 const Home = lazy(async () => import('../pages/Home'));
 let Menu = [
 	{
 		path: '/',
 		name: 'Home',
-		component: Matching,
+		component: Static,
 	},
 	{
 		path: '/play',

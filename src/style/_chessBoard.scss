@@ -3,10 +3,11 @@ $odd-box: #333;
 $border-color: #000;
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: start;
   }
   
   .chessboard {
+    position: inherit;
     margin-top: auto; /* Push chessboard to the bottom of the container */
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -16,7 +17,7 @@ $border-color: #000;
     border: 2px solid $border-color;
   }  
   .square {
-    display: flex;
+    display: flex;  
     justify-content: center;
     align-items: center;
     font-size: 4vmin;

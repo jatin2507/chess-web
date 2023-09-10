@@ -85,4 +85,16 @@
 
 
 
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .grid-item {
 
+    background-color: #f0f0f0; // Adjust the background color as per your design
+    padding: 20px; // Adjust the padding as per your design
+    border: 1px solid #ddd; // Optional: Add borders as per your design
+    border-radius: 5px; 
+    text-align: center;
+  }

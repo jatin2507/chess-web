@@ -12,6 +12,7 @@ export default function Auth() {
     const dispatch = useDispatch()
     let nevi = useNavigate()
     useEffect(() => {
+        localStorage.removeItem('token')
         if (token) {
             localStorage.setItem('token', token);
             setloader(false)
@@ -22,7 +23,7 @@ export default function Auth() {
     let handleNevi = (filePath) => {
         nevi(filePath)
     }
-    
+
     let handleGuest = () => {
         setloader(true)
         dispatch({ type: 'req@auth:guest', payload: { role: 'guest' } })

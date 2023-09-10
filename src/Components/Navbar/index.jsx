@@ -35,7 +35,7 @@ let Menu = [
     routes: [
       {
         path: '/multi-player',
-        name: 'multi Player',
+        name: 'Multi Player',
 
       },
       {
@@ -71,31 +71,31 @@ let Menu = [
 export default function Navbar({ route, component: Component }) {
   let userInfo = useSelector((state) => state.userInfo);
   let fail = useSelector((state) => state.fail)
+  let popup = useSelector((state) => state.popup)
+
   let dispatch = useDispatch()
   const [colsaped, setcolsaped] = useState(true)
-  const [user, setuser] = useState({})
-  const [token, settoken] = useState(localStorage.getItem('token'))
+  const [popups, setpopup] = useState(popup)
+  const [userdetails, setuserdetails] = useState({})
   const [loader, setloader] = useState(true)
   useEffect(() => {
-    if (!token || userInfo.error) {
-      handleNevi('/auth')
+    let token = localStorage.getItem('token')
+    if (!token) {
+      return handleNevi('/auth')
     }
-    dispatch({ type: 'req@auth:userInfo', payload: { token } })
+    dispatch({ type: 'req@info:userInfo', payload: { token } })
+
   }, []);
 
-  useEffect(() => {
-    if (userInfo.error ?? true) {
-      disconnectSocket()
-      handleNevi('/auth')
-    }
-    setuser({...userInfo})
-    setloader(userInfo.isLoading)
-  }, [userInfo])
+  useEffect(() => { setloader(userInfo.isLoadding); setuserdetails({ ...userInfo }) }, [userInfo]);
 
   useEffect(() => {
     if (!fail.error) return
-    if (fail.msg == NotificationType.FAIL.PLAYER_NOT_FOUND)
+    if (fail.msg == NotificationType.FAIL.PLAYER_NOT_FOUND || fail.msg == NotificationType.FAIL.TOKEN_NOT_FOUND || fail.msg == NotificationType.FAIL.TOKEN_NOT_IS_VALID || fail.msg == NotificationType.FAIL.USER_NOT_FOUND) {
+      dispatch({ type: 'fail', payload: { error: false, msg: '' } })
+      dispatch({ type: 'auth:token', payload: { token: '' } });
       handleNevi('/auth')
+    }
     if (fail.msg == NotificationType.FAIL.PLAYER_IS_OFFLINE)
       handleNevi('/play')
   }, [fail])
@@ -121,9 +121,8 @@ export default function Navbar({ route, component: Component }) {
     )
   }
   function handleDropDownOpt(ele) {
-    localStorage.removeItem('token')
-    window.location.reload();
-    // handleNevi(ele.key)
+    dispatch({ type: 'auth:token', payload: { token: '' } });
+    handleNevi('/auth')
   }
 
   return (
@@ -149,7 +148,7 @@ export default function Navbar({ route, component: Component }) {
             avatarProps={{
               src: 'https://gw.alipayobjects.com/zos/antfincdn/efFD%24IOql2/weixintupian_20170331104822.jpg',
               size: 'small',
-              title: user?.username || 'Guest',
+              title: userdetails?.username || 'Guest',
               render: (props, dom) => {
                 return (
                   <Dropdown
