@@ -6,6 +6,7 @@ $animDuration: 8s;
 
 
 .matching, .preloader {
+  position: relative;
   display: flex;
   :root {
     font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));

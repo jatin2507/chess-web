@@ -5,7 +5,6 @@ import { useEffect } from 'react'
 import ConfirmModel from '../../../Components/Poppap/Confirm'
 import { useNavigate } from 'react-router-dom'
 import ChessBoard from '../../../Components/chessBoard'
-import Static from '../../../Components/Satics'
 import { Col, Row } from 'antd'
 
 export default function MulitPlayes() {
@@ -40,9 +39,9 @@ export default function MulitPlayes() {
         <div>
             {waitingLoader ? <Matching /> :
                 <div className='grid-container'>
-                    <ChessBoard className='grid-item' />
+                    <ChessBoard poz={match?.lastCache}/>
                     <div className="grid-item">
-                        <Static />
+                        {/* <Static /> */}
                     </div>
                 </div>
                 }

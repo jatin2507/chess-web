@@ -1,38 +1,123 @@
 $even-box: #eee;
 $odd-box: #333;
 $border-color: #000;
-.container {
-    display: flex;
-    justify-content: start;
-  }
+// .container {
+//     display: flex;
+//     justify-content: start;
+//   }
   
-  .chessboard {
-    position: inherit;
-    margin-top: auto; /* Push chessboard to the bottom of the container */
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    width: 80vmin;
-    height: 80vmin;
-    border: 2px solid $border-color;
-  }  
-  .square {
-    display: flex;  
-    justify-content: center;
-    align-items: center;
-    font-size: 4vmin;
-    font-weight: bold;
-  }
-  .wh{
-    background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Chess_plt45.svg/45px-Chess_plt45.svg.png);  
-  }
-  .white {
-    background-color: $even-box;
-  }
+//   .chessboard {
+//     position: inherit;
+//     margin-top: auto; /* Push chessboard to the bottom of the container */
+//     display: grid;
+//     grid-template-columns: repeat(8, 1fr);
+//     grid-template-rows: repeat(8, 1fr);
+//     width: 80vmin;
+//     height: 80vmin;
+//     border: 2px solid $border-color;
+//   }  
+//   .square {
+//     display: flex;  
+//     justify-content: center;
+//     align-items: center;
+//     font-size: 4vmin;
+//     font-weight: bold;
+//   }
+//   .wh{
+//     background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Chess_plt45.svg/45px-Chess_plt45.svg.png);  
+//   }
+//   .white {
+//     background-color: $even-box;
+//   }
   
-  .black {
-    background-color:$odd-box;
-    color: white;
-  }
-  
+//   .black {
+//     background-color:$odd-box;
+//     color: white;
+//   }
+.chessboard{
+    .bp{
+        background-image: url('../assets/pieces/chasse/Black_01.png');
+        background-size: cover; 
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .br{
+        background-image: url('../assets/pieces/chasse/Black_09.png');
+        background-size: cover; 
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .bn{
+        background-image: url('../assets/pieces/chasse/Black_10.png');
+        background-size: cover; 
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .bb{
+        background-image: url('../assets/pieces/chasse/Black_11.png');
+        background-size: cover; 
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .bk{
+        background-image: url('../assets/pieces/chasse/Black_12.png');
+        background-size: cover; 
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .bq{
+        background-image: url('../assets/pieces/chasse/Black_13.png');
+        background-size: cover; 
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .wr{
+        background-image: url('../assets/pieces/chasse/White_01.png');
+        background-size: cover; 
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .wn{
+        background-image: url('../assets/pieces/chasse/White_02.png');
+        background-size: cover; 
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .wb{
+        background-image: url('../assets/pieces/chasse/White_03.png');
+        background-size: cover; 
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .wk{
+        background-image: url('../assets/pieces/chasse/White_04.png');
+        background-size: cover; 
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .wq{
+        background-image: url('../assets/pieces/chasse/White_05.png');
+        background-size: cover; 
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .wp{
+        background-image: url('../assets/pieces/chasse/White_16.png');
+        background-size: cover; 
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
 
+}
